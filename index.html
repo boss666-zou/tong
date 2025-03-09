@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 学习网站 - 主页</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 为除导航栏外的内容添加样式 */
+        .main-content {
+            margin-left: 10%;
+        }
+    </style>
     <script>
         // 屏蔽右键菜单
         document.addEventListener('contextmenu', event => event.preventDefault());
-    
+
         // 禁用F12和Ctrl+Shift+I组合键
         document.addEventListener('keydown', event => {
-          if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && event.keyCode === 73)) {
-            event.preventDefault();
-          }
+            if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && event.keyCode === 73)) {
+                event.preventDefault();
+            }
         });
-      </script>
+    </script>
 </head>
 
 <body>
@@ -30,41 +36,45 @@
             <li><a href="external_resources.html">网外资源</a></li>
         </ul>
     </nav>
-    <!-- 主页内容 -->
-    <main>
-        <h1>欢迎来到 HTML 学习网站</h1>
-        <p>在这里，你将系统地学习 HTML 知识，从基础概念到实际应用。</p>
-    </main>
-    <section class="html-introduction">
-        <h2>HTML即超文本标记语言（HyperText Markup Language），是用于创建网页的标准标记语言，以下是关于它的详细介绍：</h2>
+    <h1>欢迎来到 HTML 学习网站</h1>
+    <!-- 将除导航栏外的内容包裹在一个容器中 -->
+    <div class="main-content">
+        <!-- 主页内容 -->
+        <main>
+            
+            <p>在这里，你将系统地学习 HTML 知识，从基础概念到实际应用。</p>
+        </main>
+        <section class="html-introduction">
+            <h2>HTML即超文本标记语言（HyperText Markup Language），是用于创建网页的标准标记语言，以下是关于它的详细介绍：</h2>
 
-        <h3>基本概念</h3>
-        <p>HTML通过一系列的标记标签（tag）来描述网页的结构和内容，这些标签告诉浏览器如何显示文本、图像、链接等元素。浏览器读取HTML文件后，会根据其中的标签将网页内容以可视化的形式呈现给用户。</p>
+            <h3>基本概念</h3>
+            <p>HTML通过一系列的标记标签（tag）来描述网页的结构和内容，这些标签告诉浏览器如何显示文本、图像、链接等元素。浏览器读取HTML文件后，会根据其中的标签将网页内容以可视化的形式呈现给用户。</p>
 
-        <h3>主要组成部分</h3>
-        <ul>
-            <li>标签：HTML标签是HTML语言的基本组成单位，由尖括号包围，如 <code>&lt;html&gt;</code> 、 <code>&lt;body&gt;</code> 等。通常成对出现，有开始标签和结束标签，结束标签在标签名前加“/”，但也有一些自闭合标签，如 <code>&lt;img&gt;</code> 、 <code>&lt;input&gt;</code> 。</li>
-            <li>元素：HTML元素由开始标签、内容和结束标签组成，例如 <code>&lt;p&gt;</code> 这是一段文字 <code>&lt;/p&gt;</code> ， <code>&lt;p&gt;</code> 是开始标签，“这是一段文字”是内容， <code>&lt;/p&gt;</code> 是结束标签。</li>
-            <li>属性：用于为HTML元素提供额外的信息或功能，如 <code>&lt;a&gt;</code> 链接 中的 <code>href</code> 就是属性，指定了链接的目标地址。</li>
-        </ul>
+            <h3>主要组成部分</h3>
+            <ul>
+                <li>标签：HTML标签是HTML语言的基本组成单位，由尖括号包围，如 <code>&lt;html&gt;</code> 、 <code>&lt;body&gt;</code> 等。通常成对出现，有开始标签和结束标签，结束标签在标签名前加“/”，但也有一些自闭合标签，如 <code>&lt;img&gt;</code> 、 <code>&lt;input&gt;</code> 。</li>
+                <li>元素：HTML元素由开始标签、内容和结束标签组成，例如 <code>&lt;p&gt;</code> 这是一段文字 <code>&lt;/p&gt;</code> ， <code>&lt;p&gt;</code> 是开始标签，“这是一段文字”是内容， <code>&lt;/p&gt;</code> 是结束标签。</li>
+                <li>属性：用于为HTML元素提供额外的信息或功能，如 <code>&lt;a&gt;</code> 链接 中的 <code>href</code> 就是属性，指定了链接的目标地址。</li>
+            </ul>
 
-        <h3>文档结构</h3>
-        <p>一个基本的HTML文档结构通常包含以下几个主要部分：</p>
-        <ul>
-            <li><code>&lt;!DOCTYPE html&gt;</code> ：文档类型声明，告诉浏览器使用HTML5标准来解析文档。</li>
-            <li><code>&lt;html&gt;</code> ：根标签，包含了整个网页的所有内容。</li>
-            <li><code>&lt;head&gt;</code> ：头部标签，包含了文档的元信息，如文档标题、样式表链接、字符编码等，不会在页面中直接显示内容。</li>
-            <li><code>&lt;body&gt;</code> ：主体标签，包含了网页中要显示的所有内容，如文本、图片、视频等。</li>
-        </ul>
+            <h3>文档结构</h3>
+            <p>一个基本的HTML文档结构通常包含以下几个主要部分：</p>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code> ：文档类型声明，告诉浏览器使用HTML5标准来解析文档。</li>
+                <li><code>&lt;html&gt;</code> ：根标签，包含了整个网页的所有内容。</li>
+                <li><code>&lt;head&gt;</code> ：头部标签，包含了文档的元信息，如文档标题、样式表链接、字符编码等，不会在页面中直接显示内容。</li>
+                <li><code>&lt;body&gt;</code> ：主体标签，包含了网页中要显示的所有内容，如文本、图片、视频等。</li>
+            </ul>
 
-        <h3>作用与功能</h3>
-        <ul>
-            <li>内容呈现：可以通过不同的标签来定义标题、段落、列表、表格等各种文本内容的展示形式。</li>
-            <li>媒体嵌入：能够嵌入图片、音频、视频等多媒体元素，丰富网页的内容和形式，如 <code>&lt;img&gt;</code> 标签用于显示图片， <code>&lt;video&gt;</code> 标签用于播放视频。</li>
-            <li>链接创建：通过 <code>&lt;a&gt;</code> 标签创建超链接，实现网页之间的跳转以及与其他资源的连接。</li>
-            <li>表单设计：借助 <code>&lt;form&gt;</code> 、 <code>&lt;input&gt;</code> 等标签创建表单，用于用户输入信息，如注册登录表单、搜索框等。</li>
-        </ul>
-    </section> 
+            <h3>作用与功能</h3>
+            <ul>
+                <li>内容呈现：可以通过不同的标签来定义标题、段落、列表、表格等各种文本内容的展示形式。</li>
+                <li>媒体嵌入：能够嵌入图片、音频、视频等多媒体元素，丰富网页的内容和形式，如 <code>&lt;img&gt;</code> 标签用于显示图片， <code>&lt;video&gt;</code> 标签用于播放视频。</li>
+                <li>链接创建：通过 <code>&lt;a&gt;</code> 标签创建超链接，实现网页之间的跳转以及与其他资源的连接。</li>
+                <li>表单设计：借助 <code>&lt;form&gt;</code> 、 <code>&lt;input&gt;</code> 等标签创建表单，用于用户输入信息，如注册登录表单、搜索框等。</li>
+            </ul>
+        </section>
+    </div>
 </body>
 
 </html>
