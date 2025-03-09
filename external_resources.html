@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 学习网站 - 网外资源</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // 屏蔽右键菜单
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    
+        // 禁用F12和Ctrl+Shift+I组合键
+        document.addEventListener('keydown', event => {
+          if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && event.keyCode === 73)) {
+            event.preventDefault();
+          }
+        });
+      </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="basic_tutorial.html">基础教程</a></li>
+            <li><a href="tag_memory.html">标签记忆</a></li>
+            <li><a href="notes.html">注意事项</a></li>
+            <li><a href="external_resources.html">网外资源</a></li>
+        </ul>
+    </nav>
+    <!-- 网外资源内容 -->
+    <main>
+        <h1>HTML 学习网外资源</h1>
+        <ul>
+            <li><a href="https://www.w3schools.com/html/">W3Schools HTML 教程</a></li>
+            <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">MDN Web Docs - HTML</a></li>
+        </ul>
+    </main>
+</body>
+
+</html>

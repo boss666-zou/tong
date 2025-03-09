@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 学习网站 - 标签记忆</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // 屏蔽右键菜单
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    
+        // 禁用F12和Ctrl+Shift+I组合键
+        document.addEventListener('keydown', event => {
+          if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && event.keyCode === 73)) {
+            event.preventDefault();
+          }
+        });
+      </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="basic_tutorial.html">基础教程</a></li>
+            <li><a href="tag_memory.html">标签记忆</a></li>
+            <li><a href="notes.html">注意事项</a></li>
+            <li><a href="external_resources.html">网外资源</a></li>
+        </ul>
+    </nav>
+    <!-- 标签记忆内容 -->
+    <main>
+        <h1>HTML 标签记忆</h1>
+        
+    </main>
+    <h1>HTML 常见标签及其作用</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>标签类型</th>
+                <th>标签</th>
+                <th>作用</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="4">文档结构标签</td>
+                <td>&lt;html&gt;</td>
+                <td>HTML 文档的根标签</td>
+            </tr>
+            <tr>
+                <td>&lt;head&gt;</td>
+                <td>包含文档的元信息</td>
+            </tr>
+            <tr>
+                <td>&lt;body&gt;</td>
+                <td>包含网页要显示的所有内容</td>
+            </tr>
+            <tr>
+                <td>&lt;title&gt;</td>
+                <td>定义文档的标题，显示在浏览器的标题栏</td>
+            </tr>
+            <tr>
+                <td rowspan="5">文本内容标签</td>
+                <td>&lt;h1&gt; - &lt;h6&gt;</td>
+                <td>标题标签，从 &lt;h1&gt; 到 &lt;h6&gt; 表示重要性递减的标题</td>
+            </tr>
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>段落标签</td>
+            </tr>
+            <tr>
+                <td>&lt;span&gt;</td>
+                <td>行内元素，用于在不改变文本结构的情况下对部分文本进行样式设置或脚本操作</td>
+            </tr>
+            <tr>
+                <td>&lt;strong&gt;</td>
+                <td>表示强调的文本，通常以粗体显示</td>
+            </tr>
+            <tr>
+                <td>&lt;em&gt;</td>
+                <td>表示强调的文本，通常以斜体显示</td>
+            </tr>
+            <tr>
+                <td rowspan="3">列表标签</td>
+                <td>&lt;ul&gt;</td>
+                <td>无序列表标签，列表项以项目符号显示</td>
+            </tr>
+            <tr>
+                <td>&lt;ol&gt;</td>
+                <td>有序列表标签，列表项以数字或字母等顺序显示</td>
+            </tr>
+            <tr>
+                <td>&lt;li&gt;</td>
+                <td>列表项标签，用于 &lt;ul&gt; 和 &lt;ol&gt; 中</td>
+            </tr>
+            <tr>
+                <td rowspan="2">链接与图像标签</td>
+                <td>&lt;a&gt;</td>
+                <td>超链接标签，用于创建指向其他网页或资源的链接</td>
+            </tr>
+            <tr>
+                <td>&lt;img&gt;</td>
+                <td>图像标签，用于在网页中显示图片</td>
+            </tr>
+            <tr>
+                <td rowspan="4">表格标签</td>
+                <td>&lt;table&gt;</td>
+                <td>表格标签</td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>表格行标签</td>
+            </tr>
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>表格单元格标签</td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>表格表头单元格标签，通常以粗体居中显示</td>
+            </tr>
+            <tr>
+                <td rowspan="5">表单标签</td>
+                <td>&lt;form&gt;</td>
+                <td>表单标签，用于创建用户输入的表单</td>
+            </tr>
+            <tr>
+                <td>&lt;input&gt;</td>
+                <td>输入框标签，根据 type 属性可以是文本框、密码框、单选框等</td>
+            </tr>
+            <tr>
+                <td>&lt;textarea&gt;</td>
+                <td>多行文本输入框标签</td>
+            </tr>
+            <tr>
+                <td>&lt;select&gt;</td>
+                <td>下拉列表标签</td>
+            </tr>
+            <tr>
+                <td>&lt;button&gt;</td>
+                <td>按钮标签</td>
+            </tr>
+            <tr>
+                <td rowspan="2">多媒体标签</td>
+                <td>&lt;video&gt;</td>
+                <td>视频标签，用于在网页中嵌入视频</td>
+            </tr>
+            <tr>
+                <td>&lt;audio&gt;</td>
+                <td>音频标签，用于在网页中嵌入音频</td>
+            </tr>
+            <tr>
+                <td rowspan="3">其他标签</td>
+                <td>&lt;div&gt;</td>
+                <td>块级元素，用于划分网页区域，常作为布局容器</td>
+            </tr>
+            <tr>
+                <td>&lt;br&gt;</td>
+                <td>换行标签，用于强制换行</td>
+            </tr>
+            <tr>
+                <td>&lt;hr&gt;</td>
+                <td>水平分割线标签，用于在页面中插入一条水平分割线</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+
+
+
+<h2>&lt;a&gt; 标签</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>取值</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>target</td>
+            <td>_self</td>
+            <td>默认，在当前窗口打开链接</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>_blank</td>
+            <td>在新窗口或新标签页打开链接</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>_parent</td>
+            <td>在父框架中打开链接</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>_top</td>
+            <td>在整个窗口中打开链接，取消所有框架</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>&lt;img&gt; 标签</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>取值</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>width</td>
+            <td>具体像素值，如 200</td>
+            <td>图像的宽度，单位为像素</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>百分比值，如 50%</td>
+            <td>相对于父元素的宽度比例</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>具体像素值，如 200</td>
+            <td>图像的高度，单位为像素</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>百分比值，如 50%</td>
+            <td>相对于父元素的高度比例</td>
+        </tr>
+        <tr>
+            <td>alt</td>
+            <td>任何描述性文本</td>
+            <td>用于在图像无法显示时替代显示</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>&lt;input&gt; 标签</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>取值</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>type</td>
+            <td>text</td>
+            <td>文本输入框</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>password</td>
+            <td>密码输入框</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>radio</td>
+            <td>单选按钮</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>checkbox</td>
+            <td>复选框</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>submit</td>
+            <td>提交按钮</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>reset</td>
+            <td>重置按钮</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>file</td>
+            <td>文件选择框</td>
+        </tr>
+        <tr>
+            <td>checked</td>
+            <td>对于 radio 和 checkbox 类型</td>
+            <td>写了表示默认被选中，不写则表示未选中</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>&lt;video&gt; 、 &lt;audio&gt; 标签</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>取值</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>autoplay</td>
+            <td>autoplay</td>
+            <td>表示自动播放</td>
+        </tr>
+        <tr>
+            <td>autoplay</td>
+            <td>不写</td>
+            <td>表示不自动播放</td>
+        </tr>
+        <tr>
+            <td>loop</td>
+            <td>loop</td>
+            <td>表示循环播放</td>
+        </tr>
+        <tr>
+            <td>loop</td>
+            <td>不写</td>
+            <td>表示不循环播放</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>&lt;table&gt; 标签</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>取值</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>border</td>
+            <td>具体数字，如 1</td>
+            <td>表示边框的宽度，单位是像素</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>&lt;div&gt; 、 &lt;span&gt; 标签</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>取值</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>class</td>
+            <td>自定义类名，如 container</td>
+            <td>可由字母、数字、下划线等组成</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>唯一标识符，如 main-content</td>
+            <td>命名规则与 class 类似</td>
+        </tr>
+    </tbody>
+</table>

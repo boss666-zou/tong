@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 学习网站 - 基础教程</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 设置主体内容居中 */
+        .main-content {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="basic_tutorial.html">基础教程</a></li>
+            <li><a href="tag_memory.html">标签记忆</a></li>
+            <li><a href="notes.html">注意事项</a></li>
+            <li><a href="external_resources.html">网外资源</a></li>
+        </ul>
+    </nav>
+    <!-- 给主体内容添加类名 -->
+    <div class="main-content">
+        <h1>HTML 基础教程</h1>
+
+        <h2>HTML 基本概念</h2>
+        <p><strong>定义</strong>：HTML 即超文本标记语言，是用来描述网页的语言。</p>
+        <p><strong>作用</strong>：通过各种标签来构建网页的结构和内容，使浏览器能够正确地显示网页。</p>
+
+        <h2>HTML 基本结构</h2>
+        <ul>
+            <li><strong>文档类型声明</strong>： <code>&lt;!DOCTYPE html&gt;</code> ，告诉浏览器当前文档是 HTML5 类型的文档。</li>
+            <li><strong>根标签</strong>： <code>&lt;html&gt;</code> 标签是 HTML 文档的根元素，所有其他标签都包含在这个标签内。</li>
+            <li><strong>头部区域</strong>： <code>&lt;head&gt;</code> 标签内包含了文档的元数据，如文档标题、字符编码等。其中， <code>&lt;title&gt;</code> 标签用于设置网页的标题。</li>
+            <li><strong>主体区域</strong>： <code>&lt;body&gt;</code> 标签包含了网页的实际内容，如文字、图片、链接等。</li>
+        </ul>
+
+        <h2>基本标签</h2>
+        <ul>
+            <li><strong>标题标签</strong>： <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> ，用于定义不同级别的标题， <code>&lt;h1&gt;</code> 级别最高，字体最大。</li>
+            <li><strong>段落标签</strong>： <code>&lt;p&gt;</code> ，用于定义段落，段落之间会有默认的间距。</li>
+            <li><strong>换行标签</strong>： <code>&lt;br&gt;</code> ，是单标签，用于在文本中强制换行。</li>
+            <li><strong>水平线标签</strong>： <code>&lt;hr&gt;</code> ，用于在页面中插入一条水平线。</li>
+            <li><strong>链接标签</strong>： <code>&lt;a&gt;</code> ，用于创建超链接，通过 <code>href</code> 属性指定链接的目标地址。</li>
+            <li><strong>图片标签</strong>： <code>&lt;img&gt;</code> ，用于在网页中插入图片，通过 <code>src</code> 属性指定图片的路径。</li>
+        </ul>
+
+        <h2>标签属性</h2>
+        <p><strong>概念</strong>：标签可以拥有属性，属性为标签提供了额外的信息或功能。</p>
+        <p><strong>示例</strong>： <code>&lt;a href="https://example.com" target="_blank"&gt;点击访问&lt;/a&gt;</code> 中， <code>href</code> 和 <code>target</code> 是 <code>&lt;a&gt;</code> 标签的属性。</p>
+
+        <h2>特殊字符</h2>
+        <p>在 HTML 中，一些字符具有特殊的含义，如果要显示这些字符本身，需要使用特殊字符实体。比如，空格用 <code>&amp;nbsp;</code> 表示，小于号用 <code>&amp;lt;</code> 表示，大于号用 <code>&amp;gt;</code> 表示。</p>
+
+        <h2>注释</h2>
+        <p>HTML 中的注释以 <code>&lt;!--</code> 开始，以 <code>--&gt;</code> 结束，注释内容不会在浏览器中显示，用于对代码进行解释说明。例如： <code>&lt;!-- 这是一个注释 --&gt;</code> 。</p>
+    </div>
+</body>
+
+</html>

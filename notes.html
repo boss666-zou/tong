@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 学习网站 - 注意事项</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 新增样式，用于可折叠列表 */
+       .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+       .active,
+       .collapsible:hover {
+            background-color: #ccc;
+        }
+       .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        h1 {
+            text-align: center;
+        }
+        li:has(span:contains("注意事项")) {
+            text-align: center;
+        }
+    /* 新增评论表单样式 */
+    #comment-section {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    #comment-section h2 {
+        margin-top: 0;
+    }
+    #comment-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    #comment-form input[type="text"],
+    #comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    #comment-form input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    #comment-form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    #comments-list {
+        margin-top: 20px;
+    }
+    #comments-list p {
+        border: 1px solid #eee;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* 删除按钮样式 */
+    .delete-comment {
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .delete-comment:hover {
+        background-color: #c82333;
+    }
+    </style>
+    <script>
+        // 屏蔽右键菜单
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    
+        // 禁用F12和Ctrl+Shift+I组合键
+        document.addEventListener('keydown', event => {
+          if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && event.keyCode === 73)) {
+            event.preventDefault();
+          }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="basic_tutorial.html">基础教程</a></li>
+            <li><a href="tag_memory.html">标签记忆</a></li>
+            <li><a href="notes.html">注意事项</a></li>
+            <li><a href="external_resources.html">网外资源</a></li>
+        </ul>
+    </nav>
+    <!-- 注意事项内容 -->
+    <main>
+        <h1>HTML 学习注意事项</h1>
+        <button type="button" class="collapsible">HTML5部分 - 文档声明</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：必须在HTML文档开头准确写下 <code>&lt;!DOCTYPE html&gt;</code> 。</li>
+                <li>解释1： <code>&lt;!DOCTYPE html&gt;</code> 是HTML5规范中定义的文档类型声明，它向浏览器传达了当前页面遵循的HTML版本标准，让浏览器以符合HTML5规则的模式对页面进行解析和渲染。</li>
+                <li>解释2：这就像是给浏览器的一份说明书开头，告诉浏览器“我这个网页是按照HTML5的规矩做的，你照着这个标准来显示内容”。要是没有它或者写错了，浏览器就可能“看不懂”网页该怎么展示，导致页面看起来乱七八糟。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">HTML5部分 - 语义化标签使用</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：避免过度使用 <code>&lt;div&gt;</code> ，优先选用语义化标签，如 <code>&lt;header&gt;</code> 、 <code>&lt;nav&gt;</code> 、 <code>&lt;main&gt;</code> 、 <code>&lt;article&gt;</code> 、 <code>&lt;section&gt;</code> 、 <code>&lt;footer&gt;</code> 等构建页面结构。</li>
+                <li>解释1：语义化标签能为网页内容赋予明确的语义含义，有助于搜索引擎的爬虫程序更好地理解页面内容的层次和主题，同时方便开发团队成员之间交流和后期代码维护。</li>
+                <li>解释2：把网页比作一篇文章，语义化标签就像是文章里的标题、段落、章节等划分。比如 <code>&lt;header&gt;</code> 就像文章开头的标题部分， <code>&lt;nav&gt;</code> 是文章里的目录，这样不仅搜索引擎能更快找到重点，其他开发人员看代码时也能快速明白各个部分的作用，而不是面对一堆没有明确意义的 <code>&lt;div&gt;</code> 标签一头雾水。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">HTML5部分 - 字符编码设置</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：在 <code>&lt;head&gt;</code> 标签内添加 <code>&lt;meta charset="UTF-8"&gt;</code> 来指定字符编码。</li>
+                <li>解释1： <code>UTF - 8</code> 是一种通用的变长字符编码方案，能够对世界上绝大多数的字符进行编码。通过设置该编码，浏览器可以正确地将存储在文件中的二进制数据转换为对应的字符显示出来。</li>
+                <li>解释2：字符编码就像是一种“翻译规则”，不同国家和语言的文字都有各自的编码方式。 <code>UTF-8</code> 是个“万能翻译官”，能把各种文字都准确翻译显示。如果编码设置错了，网页上的文字就像被“乱码翻译”，根本看不懂写的是什么。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">HTML5部分 - 表单元素属性</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：根据表单功能需求，正确设置 <code>&lt;input&gt;</code> 、 <code>&lt;select&gt;</code> 、 <code>&lt;textarea&gt;</code> 等元素的属性，如 <code>&lt;input&gt;</code> 的 <code>type</code> 、 <code>name</code> 、 <code>placeholder</code> ， <code>&lt;select&gt;</code> 的 <code>multiple</code> 等。</li>
+                <li>解释1：这些属性定义了表单元素的行为、功能和外观， <code>type</code> 决定了 <code>&lt;input&gt;</code> 的具体类型（如文本框、密码框等）， <code>name</code> 用于在提交表单时标识数据， <code>placeholder</code> 提供提示信息。合理设置属性才能保证表单正常工作和数据正确传输。</li>
+                <li>解释2：表单元素就像一个个“小工具”，属性就是这些工具的“使用说明”。比如 <code>&lt;input&gt;</code> 这个工具， <code>type</code> 属性就像是告诉它“你现在要当文本框还是密码框”， <code>name</code> 属性是给它取个名字，方便把用户输入的数据打包送出去，要是属性设置错了，这些“小工具”就没法好好干活。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">HTML5部分 - 多媒体元素兼容性</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：使用 <code>&lt;audio&gt;</code> 和 <code>&lt;video&gt;</code> 标签嵌入多媒体内容时，要提供多种格式的媒体文件，并添加适当的回退内容。</li>
+                <li>解释1：不同的浏览器内核对于音频和视频格式的支持存在差异，如Chrome、Firefox、Safari等浏览器支持的格式不完全相同。提供多种格式（如MP4、WebM、Ogg）可以确保在大多数浏览器上都能正常播放，回退内容则在不支持的情况下给用户提示。</li>
+                <li>解释2：就像不同的播放器能播放的视频、音频格式不一样，浏览器也是如此。为了让大多数人都能顺利播放网页上的多媒体内容，就得准备几种常见格式的文件。要是只准备了一种，有些浏览器“不认识”这种格式，就没法播放，而回退内容就像是告诉用户“你的浏览器播不了，得换个方式啦”。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">CSS部分 - 选择器优先级</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：牢记选择器优先级顺序为 <code>!important</code>  > 行内样式 >  <code>ID</code> 选择器 > 类选择器、属性选择器、伪类选择器 > 元素选择器 > 通配符选择器，并合理运用。</li>
+                <li>解释1：当多个CSS规则同时作用于同一个HTML元素时，浏览器会根据选择器的优先级来决定应用哪条规则。优先级高的规则会覆盖优先级低的规则，以确保样式的准确性和一致性。</li>
+                <li>解释2：可以把选择器优先级想象成一场“权力游戏”， <code>!important</code> 就像是“大boss”，拥有最高权力，它指定的样式一定会生效。行内样式是直接写在HTML元素里的，权力也很大。 <code>ID</code> 选择器像有独特身份的角色，类选择器等次之，元素选择器权力较小，通配符选择器权力最小。要是不明白这个顺序，就可能出现你想设置的样式被其他规则“抢走风头”，没按你想的显示。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">CSS部分 - 盒模型</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：理解标准盒模型和IE盒模型的区别，合理运用 <code>box-sizing</code> 属性。</li>
+                <li>解释1：标准盒模型中，元素的 <code>width</code> 和 <code>height</code> 仅指内容区域的宽度和高度，内边距（ <code>padding</code> ）和边框（ <code>border</code> ）是在这个尺寸基础上向外扩展；IE盒模型中， <code>width</code> 和 <code>height</code> 包含了内容、内边距和边框的总宽度和高度。 <code>box-sizing</code> 属性可以切换盒模型类型， <code>content-box</code> 表示标准盒模型， <code>border-box</code> 表示IE盒模型。</li>
+                <li>解释2：把元素想象成一个带包装的礼物。标准盒模型下，你说的礼物大小只是里面东西的大小，包装是另外算的；IE盒模型则是把礼物和包装一起算成礼物的大小。 <code>box-sizing</code> 就像是一个“设定开关”，可以决定按照哪种方式来计算大小。如果用错了，就像算错了礼物尺寸，可能导致页面上元素挤在一起或者位置不对。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">CSS部分 - 浮动</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：使用 <code>float</code> 属性使元素浮动后，要及时清除浮动带来的影响。</li>
+                <li>解释1：浮动元素会脱离正常的文档流，向左或向右浮动，可能会导致其父元素高度塌陷，影响后续元素的正常布局。清除浮动的方法有使用 <code>clear</code> 属性、触发BFC（块级格式化上下文）等。</li>
+                <li>解释2：可以把正常文档流想象成排队，浮动元素就像是从队伍里跑出来往旁边站了。这就可能导致原本包含它的“队伍段落”变矮了，后面的“队伍”也会受影响。清除浮动就是想办法让队伍恢复正常秩序，比如让后面的元素“无视”前面跑出来的元素，或者给包含浮动元素的部分重新整理好队形。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">CSS部分 - 单位使用</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：根据不同的需求和场景，准确选择长度单位，如 <code>px</code> （像素）、 <code>em</code> 、 <code>rem</code> 、 <code>%</code> 等。</li>
+                <li>解释1： <code>px</code> 是绝对长度单位，在屏幕上对应的物理像素数量是固定的； <code>em</code> 是相对单位，相对于父元素的字体大小； <code>rem</code> 也是相对单位，但相对于根元素（ <code>html</code> ）的字体大小； <code>%</code> 是相对于父元素的尺寸或其他相关属性值的百分比。</li>
+                <li>解释2：把网页布局想象成搭积木， <code>px</code> 就像是固定大小的积木块，每次用它，大小都一样。 <code>em</code> 和 <code>rem</code> 像是会跟着“标准积木”大小变化的积木， <code>em</code> 跟着父积木， <code>rem</code> 跟着最开始的那个“总标准积木”。 <code>%</code> 则像是按照比例来调整积木大小。如果用错单位，就像用错了积木尺寸，整个网页布局可能就不协调了。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">CSS部分 - 样式继承</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：明确哪些CSS属性具有继承性，如 <code>font-*</code> 、 <code>color</code> 等，哪些不具有，避免错误使用。</li>
+                <li>解释1：继承性是指某些CSS属性会自动应用到元素的子元素上。具有继承性的属性在父元素上设置后，子元素无需再次声明即可拥有该样式；非继承属性则需要在子元素上单独设置。</li>
+                <li>解释2：可以把网页元素想象成一个家族，父元素是家长，子元素是孩子。具有继承性的属性就像是家族的“外貌特征”，家长有某种特征（比如设定了字体颜色），孩子们（子元素）会自然拥有。而不具有继承性的属性就像是每个孩子自己的“个性装扮”，得自己去设置，不能指望从家长那里直接得到。</li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">CSS部分 - @import和link</button>
+        <div class="content">
+            <ul>
+                <li>注意事项：区分 <code>@import</code> 和 <code>link</code> 引入样式表的方式，根据实际情况选择合适的方法。</li>
+                <li>解释1： <code>@import</code> 是CSS规则，通常写在CSS文件内部，用于导入其他CSS文件。它在页面加载完成后才会加载引入的样式表，可能导致页面出现短暂的无样式闪烁。 <code>link</code> 是HTML标签，在页面解析过程中就会同时加载样式表，并且支持使用媒体查询等功能。</li>
+                <li>解释2： <code>@import</code> 就像是在一个大仓库（主CSS文件）里喊“去把另一个仓库的东西拿过来”，但要等主仓库的东西都整理好了才去拿，这期间可能会让网页“光溜溜”一会儿。 <code>link</code> 则像是在盖房子（解析页面）的时候，就把要用的材料（样式表）一起拉过来，而且还能根据不同的“建房条件”（媒体查询）选择不同的材料，更灵活高效。</li>
+            </ul>
+        </div>
+    </main>
+    <!-- 添加评论表单 -->
+    <div id="comment-section">
+        <h2>添加评论</h2>
+        <form id="comment-form">
+            <label for="comment-author">姓名:</label>
+            <input type="text" id="comment-author" required>
+            <br>
+            <label for="comment-text">评论内容:</label>
+            <textarea id="comment-text" required></textarea>
+            <br>
+            <input type="submit" value="提交评论">
+        </form>
+        <div id="comments-list">
+            <!-- 这里将显示评论 -->
+        </div>
+    </div>
+    <script>
+        // JavaScript 代码，用于实现折叠功能
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+
+        // 处理评论表单提交
+        const commentForm = document.getElementById('comment-form');
+        const commentsList = document.getElementById('comments-list');
+
+        commentForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const author = document.getElementById('comment-author').value;
+            const text = document.getElementById('comment-text').value;
+
+            const commentElement = document.createElement('div');
+            commentElement.innerHTML = `<p><strong>${author}:</strong> ${text}</p>`;
+
+            // 创建删除按钮
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '删除';
+            deleteButton.classList.add('delete-comment');
+            deleteButton.addEventListener('click', function () {
+                commentElement.remove();
+            });
+
+            const commentParagraph = commentElement.querySelector('p');
+            commentParagraph.appendChild(deleteButton);
+
+            commentsList.appendChild(commentElement);
+
+            // 清空表单
+            document.getElementById('comment-author').value = '';
+            document.getElementById('comment-text').value = '';
+        });
+    </script>
+</body>
+
+</html>

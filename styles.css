@@ -1,0 +1,50 @@
+/* 设置全局 body 样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 导航栏列表样式 */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+    /* 使用 flex 布局使导航栏内容居中 */
+    display: flex;
+    justify-content: center;
+}
+
+/* 导航栏列表项样式，移除多余的 float 属性 */
+nav ul li {
+    /* float: left; 此行代码可移除 */
+}
+
+/* 导航栏链接样式 */
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* 鼠标悬停时导航栏链接文字变为橘黄色 */
+nav ul li a:hover {
+    color: orange;
+}
+
+/* 页面头部区域样式 */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background-color: #f4f4f4;
+}    
+h1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    /* font-size: 20px;; */
+
+ }
